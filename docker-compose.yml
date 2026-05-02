@@ -16,7 +16,7 @@ services:
       retries: 10
 
   backend:
-    build: ./backend/
+    image: nelo05/kittygram_backend
     env_file: .env
     depends_on:
       db:
@@ -27,14 +27,14 @@ services:
 
   frontend:
     env_file: .env
-    build: ./frontend/
+    image: nelo05/kittygram_frontend
     depends_on:
       - backend
     command: cp -r /app/build/. /static
     volumes:
       - static:/static
   gateway:
-    build: ./nginx/
+    image: nelo05/kittygram_gateway
     env_file: .env
     depends_on:
       - db
