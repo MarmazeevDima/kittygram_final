@@ -68,7 +68,7 @@ def test_link_connection(
                                link_key)
     response = _make_safe_request(link)
     cats_project_name = 'Kittygram'
-    taski_project_name = 'Taski'
+    taski_project_name = 'Taski_docker'
     assert_msg_template = (
         f'Убедитесь, что по ссылке `{link}` доступен проект '
         '`{project_name}`.'
